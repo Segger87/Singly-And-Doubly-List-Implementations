@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ListImplementations
 {
@@ -19,7 +15,7 @@ namespace ListImplementations
 
 		public void PrintNodes()
 		{
-			Console.Write($"|{data}|-");
+			Console.Write(data);
 			//if the next node is not null continue to print out the node values (this works becaue next is a node itself)
 			if(next != null)
 			{

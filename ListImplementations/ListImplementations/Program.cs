@@ -11,11 +11,23 @@ namespace ListImplementations
 			//list.AddToEnd("b");
 			//list.AddToEnd("c");
 			//list.AddToEnd("d");
-			list.AddToBegninning("a");
-			list.AddToBegninning("b");
-			list.AddToBegninning("c");
-			list.AddToBegninning("d");
+			list.AddToBeginning("a");
+			list.AddToBeginning("b");
+			list.AddToBeginning("c");
+			//list.AddToBeginning("d");
 			list.PrintList();
+			MyList list2 = new MyList();
+			//list.AddToEnd("a");
+			//list.AddToEnd("b");
+			//list.AddToEnd("c");
+			//list.AddToEnd("d");
+			list2.AddToBeginning("a");
+			list2.AddToBeginning("b");
+			list2.AddToBeginning("c");
+			list2.PrintList();
+
+			Console.WriteLine(list.Equals(list2));
+
 			Console.ReadLine();
 		}
 	}

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ListImplementations
 {
-	public class MyList
+	public class MyList : IEqualityComparer<MyList>
 	{
 		public Node headNode;
 
@@ -24,12 +24,12 @@ namespace ListImplementations
 			}
 			else
 			{
-				//headnode is valid as it is !=null
+				//headnode is valid as it !=null
 				headNode.AddToEnd(data);
 			}
 		}
 
-		public void AddToBegninning(string data)
+		public void AddToBeginning(string data)
 		{
 			if(headNode == null)
 			{
@@ -49,6 +49,42 @@ namespace ListImplementations
 			{
 				headNode.PrintNodes();
 			}
+		}
+
+		public override bool Equals(object obj)
+		{
+			if (obj is null) return false;
+			if (ReferenceEquals(this, obj)) return true;
+			if (obj.GetType() != GetType()) return false;
+			return Equals((MyList)obj);
+		}
+
+		public bool Equals(MyList other)
+		{
+			if (this.headNode == null || other.headNode == null)
+				return false;
+
+			return this.headNode.data == other.headNode.data
+				&& this.headNode.next.data == other.headNode.next.data;
+		}
+		
+		public override int GetHashCode()
+		{
+			var rnd = new Random();
+			rnd.Next(0, 99);
+			int hash = headNode.GetHashCode();
+			hash = (hash * 31) + rnd.GetHashCode();
+			return hash;
+		}
+
+		public bool Equals(MyList x, MyList y)
+		{
+			throw new NotImplementedException();
+		}
+
+		public int GetHashCode(MyList obj)
+		{
+			throw new NotImplementedException();
 		}
 	}
 }
