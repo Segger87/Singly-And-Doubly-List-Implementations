@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ListImplementations
 {
-	class MyList
+	public class MyList
 	{
 		public Node headNode;
 
