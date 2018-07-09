@@ -1,17 +1,17 @@
-﻿using ListImplementations.Lists;
+﻿using System;
+using ListImplementations.Lists;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Linq;
 
 namespace ListImplementations.UnitTest
 {
 	[TestClass]
-	public class SingleLinkedListTest
+	public class DoublyLinkedListTest
 	{
 		[TestMethod]
 		public void Empty_List_HeadNode_Returns_Null()
 		{
 			//Arrange
-			var list = new SinglyLinkedList();
+			var list = new DoublyLinkedList();
 
 			//Assert
 			Assert.IsNull(list.headNode);
@@ -21,8 +21,8 @@ namespace ListImplementations.UnitTest
 		public void List_AddToBeginning_IsEqual()
 		{
 			//Arrange
-			var list = new SinglyLinkedList();
-			var list2 = new SinglyLinkedList();
+			var list = new DoublyLinkedList();
+			var list2 = new DoublyLinkedList();
 
 			//Act 
 			list.AddToBeginning("a");
@@ -41,8 +41,8 @@ namespace ListImplementations.UnitTest
 		public void List_AddToBeginning_IsNotEqual()
 		{
 			//Arrange
-			var list = new SinglyLinkedList();
-			var list2 = new SinglyLinkedList();
+			var list = new DoublyLinkedList();
+			var list2 = new DoublyLinkedList();
 
 			//Act 
 			list.AddToBeginning("a");
@@ -61,17 +61,17 @@ namespace ListImplementations.UnitTest
 		public void List_AddToEnd_IsNotEqual()
 		{
 			//Arrange
-			var list = new SinglyLinkedList();
-			var list2 = new SinglyLinkedList();
+			var list = new DoublyLinkedList();
+			var list2 = new DoublyLinkedList();
 
 			//Act 
-			list.AddToEnd("a");
-			list.AddToEnd("b");
-			list.AddToEnd("c");
+			list.AddToEnd(list,"a");
+			list.AddToEnd(list,"b");
+			list.AddToEnd(list,"c");
 
-			list2.AddToEnd("a");
-			list2.AddToEnd("b");
-			list2.AddToEnd("a");
+			list2.AddToEnd(list2,"a");
+			list2.AddToEnd(list2,"b");
+			list2.AddToEnd(list2,"a");
 
 			//Assert
 
@@ -81,17 +81,17 @@ namespace ListImplementations.UnitTest
 		public void List_AddToEnd_IsEqual()
 		{
 			//Arrange
-			var list = new SinglyLinkedList();
-			var list2 = new SinglyLinkedList();
+			var list = new DoublyLinkedList();
+			var list2 = new DoublyLinkedList();
 
 			//Act 
-			list.AddToEnd("a");
-			list.AddToEnd("b");
-			list.AddToEnd("c");
+			list.AddToEnd(list,"a");
+			list.AddToEnd(list,"b");
+			list.AddToEnd(list,"c");
 
-			list2.AddToEnd("a");
-			list2.AddToEnd("b");
-			list2.AddToEnd("c");
+			list2.AddToEnd(list2,"a");
+			list2.AddToEnd(list2,"b");
+			list2.AddToEnd(list2,"c");
 
 			//Assert
 

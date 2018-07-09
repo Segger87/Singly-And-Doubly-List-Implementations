@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ListImplementations
+namespace ListImplementations.Lists
 {
 	public class Node
 	{

@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="SingleLinkedListTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DoublyLinkedListTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
