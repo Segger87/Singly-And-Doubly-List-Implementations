@@ -97,5 +97,24 @@ namespace ListImplementations.UnitTest
 
 			Assert.IsTrue(list.Equals(list2));
 		}
+		[TestMethod]
+		public void Doubly_List_Delete_Specified_Node_IsTrue()
+		{
+			//Arrange
+			var list = new DoublyLinkedList();
+			var list2 = new DoublyLinkedList();
+
+			//Act 
+			list.AddToBeginning("beastmodeBarry");
+			list.AddToBeginning("BarryModeBeast");
+			list.AddToBeginning("jesus");
+			list.DeleteNode(list, "jesus");
+
+			list2.AddToBeginning("beastmodeBarry");
+			list2.AddToBeginning("BarryModeBeast");
+
+			//Assert
+			Assert.IsTrue(list.Equals(list2));
+		}
 	}
 }

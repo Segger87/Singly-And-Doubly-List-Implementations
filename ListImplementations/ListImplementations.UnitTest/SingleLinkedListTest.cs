@@ -94,7 +94,25 @@ namespace ListImplementations.UnitTest
 			list2.AddToEnd("c");
 
 			//Assert
+			Assert.IsTrue(list.Equals(list2));
+		}
+		[TestMethod]
+		public void Singly_List_Delete_Specified_Node_IsTrue()
+		{
+			//Arrange
+			var list = new SinglyLinkedList();
+			var list2 = new SinglyLinkedList();
 
+			//Act 
+			list.AddToEnd("a");
+			list.AddToEnd("b");
+			list.AddToEnd("c");
+			list.DeleteNode(list, "b");
+
+			list2.AddToEnd("a");
+			list2.AddToEnd("c");
+
+			//Assert
 			Assert.IsTrue(list.Equals(list2));
 		}
 	}

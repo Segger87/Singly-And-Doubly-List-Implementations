@@ -92,22 +92,6 @@ namespace ListImplementations.Lists
 
 			return true;
 		}
-		//public override bool Equals(object obj)
-		//{
-		//	if (obj is null) return false;
-		//	if (ReferenceEquals(this, obj)) return true;
-		//	if (obj.GetType() != GetType()) return false;
-		//	return Equals((MyList)obj);
-		//}
-
-		//public bool Equals(MyList other)
-		//{
-		//	if (this.headNode == null || other.headNode == null)
-		//		return false;
-
-		//	return this.headNode.data == other.headNode.data
-		//		&& this.headNode.next.data == other.headNode.next.data;
-		//}
 		
 		public override int GetHashCode()
 		{
@@ -116,6 +100,27 @@ namespace ListImplementations.Lists
 			int hash = headNode.GetHashCode();
 			hash = (hash * 31) + rnd.GetHashCode();
 			return hash;
+		}
+
+		public void DeleteNode(SinglyLinkedList singly, string key)
+		{
+			Node temp = singly.headNode;
+			Node previous = null;
+			if(temp != null && temp.data == key)
+			{
+				singly.headNode = temp.next;
+				return;
+			}
+			while(temp != null && temp.data != key)
+			{
+				previous = temp;
+				temp = temp.next;
+			}
+			if(temp == null)
+			{
+				return;
+			}
+			previous.next = temp.next;
 		}
 	}
 }

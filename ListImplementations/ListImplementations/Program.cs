@@ -16,6 +16,7 @@ namespace ListImplementations
 			list.AddToBeginning("a");
 			list.AddToBeginning("e");
 			list.AddToBeginning("d");
+
 			list.PrintList();
 			SinglyLinkedList list2 = new SinglyLinkedList();
 			list2.AddToEnd("a");
@@ -37,6 +38,9 @@ namespace ListImplementations
 			doubly2.AddToEnd(doubly2,"bob");
 			doubly2.AddToEnd(doubly2,"peter");
 			doubly2.AddToEnd(doubly2,"gary");
+
+			doubly2.DeleteNode(doubly2, "peter");
+			doubly2.PrintList();
 
 			Console.WriteLine(list.Equals(list2));
 			Console.WriteLine(doubly.Equals(doubly2));

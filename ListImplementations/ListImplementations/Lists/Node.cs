@@ -15,7 +15,7 @@ namespace ListImplementations.Lists
 
 		public void PrintNodes()
 		{
-			Console.Write(data);
+			Console.WriteLine(data);
 			//if the next node is not null continue to print out the node values (this works becaue next is a node itself)
 			if(next != null)
 			{

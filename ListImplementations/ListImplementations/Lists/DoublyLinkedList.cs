@@ -15,6 +15,14 @@ namespace ListImplementations.Lists
 		{
 			headNode = null;
 		}
+
+		public void PrintList()
+		{
+			if (headNode != null)
+			{
+				headNode.PrintNodes();
+			}
+		}
 		public void AddToBeginning(string data)
 		{
 			var newNode = new DoubleNode(data);
@@ -102,6 +110,33 @@ namespace ListImplementations.Lists
 			int hash = headNode.GetHashCode();
 			hash = (hash * 31) + rnd.GetHashCode();
 			return hash;
+		}
+
+		public void DeleteNode(DoublyLinkedList doubly, string key)
+		{
+			DoubleNode temp = doubly.headNode;
+			if (temp != null && temp.data == key)
+			{
+				doubly.headNode = temp.next;
+				doubly.headNode.previous = null;
+				return;
+			}
+			while (temp != null && temp.data != key)
+			{
+				temp = temp.next;
+			}
+			if (temp == null)
+			{
+				return;
+			}
+			if (temp.next != null)
+			{
+				temp.next.previous = temp.previous;
+			}
+			if(temp.previous != null)
+			{
+				temp.previous.next = temp.next;
+			}
 		}
 	}
 }
