@@ -85,6 +85,21 @@ namespace ListImplementations.Lists
 			return node;
 		}
 
+		public void FindNode(DoublyLinkedList doubly, string search)
+		{
+			for (int i = 0; i < doubly.length(); i++)
+			{
+				if (doubly.nodeAt(i).data == search)
+				{
+					Console.WriteLine($"There is a node that matches your search criteria of {search}");
+				}
+				else
+				{
+					Console.WriteLine("Sorry there is no match");
+				}
+			}
+		}
+
 		public bool Equals(DoublyLinkedList other)
 		{
 			if (this.length() != other.length())

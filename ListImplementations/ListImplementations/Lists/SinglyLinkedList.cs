@@ -93,6 +93,20 @@ namespace ListImplementations.Lists
 			return true;
 		}
 		
+		public void FindNode(SinglyLinkedList singly, string search)
+		{
+			for (int i = 0; i < singly.length(); i++)
+			{
+				if(singly.nodeAt(i).data == search)
+				{
+					Console.WriteLine($"There is a node that matches your search criteria of {search}");
+				}
+				else
+				{
+					Console.WriteLine("Sorry there is no match");
+				}
+			}
+		}
 		public override int GetHashCode()
 		{
 			var rnd = new Random();
