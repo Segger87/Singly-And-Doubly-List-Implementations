@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ListImplementations.Lists
 {
@@ -51,7 +46,7 @@ namespace ListImplementations.Lists
 				headNode.PrintNodes();
 			}
 		}
-		public int length()
+		public int Length()
 		{
 			var length = 0;
 			var node = this.headNode;
@@ -64,7 +59,7 @@ namespace ListImplementations.Lists
 		}
 
 		// warning negative index will return head
-		public Node nodeAt(int index)
+		public Node NodeAt(int index)
 		{
 			var node = this.headNode;
 			while (index > 0)
@@ -77,14 +72,14 @@ namespace ListImplementations.Lists
 		
 		public bool Equals(SinglyLinkedList other)
 		{
-			if (this.length() != other.length())
+			if (this.Length() != other.Length())
 			{
 				return false;
 			}
 
-			for (var i = 0; i < this.length(); i++)
+			for (var i = 0; i < this.Length(); i++)
 			{
-				if (this.nodeAt(i).data != other.nodeAt(i).data)
+				if (this.NodeAt(i).data != other.NodeAt(i).data)
 				{
 					return false;
 				}
@@ -93,17 +88,18 @@ namespace ListImplementations.Lists
 			return true;
 		}
 		
-		public void FindNode(SinglyLinkedList singly, string search)
+		public void FindNode(string search)
 		{
-			for (int i = 0; i < singly.length(); i++)
+			for (int i = 0; i < this.Length(); i++)
 			{
-				if(singly.nodeAt(i).data == search)
+				if(this.NodeAt(i).data == search)
 				{
 					Console.WriteLine($"There is a node that matches your search criteria of {search}");
 				}
 				else
 				{
 					Console.WriteLine("Sorry there is no match");
+					return;
 				}
 			}
 		}
@@ -116,13 +112,13 @@ namespace ListImplementations.Lists
 			return hash;
 		}
 
-		public void DeleteNode(SinglyLinkedList singly, string key)
+		public void DeleteNode(string key)
 		{
-			Node temp = singly.headNode;
+			Node temp = this.headNode;
 			Node previous = null;
 			if(temp != null && temp.data == key)
 			{
-				singly.headNode = temp.next;
+				this.headNode = temp.next;
 				return;
 			}
 			while(temp != null && temp.data != key)

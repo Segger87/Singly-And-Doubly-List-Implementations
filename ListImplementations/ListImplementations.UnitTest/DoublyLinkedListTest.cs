@@ -65,13 +65,13 @@ namespace ListImplementations.UnitTest
 			var list2 = new DoublyLinkedList();
 
 			//Act 
-			list.AddToEnd(list,"a");
-			list.AddToEnd(list,"b");
-			list.AddToEnd(list,"c");
+			list.AddToEnd("a");
+			list.AddToEnd("b");
+			list.AddToEnd("c");
 
-			list2.AddToEnd(list2,"a");
-			list2.AddToEnd(list2,"b");
-			list2.AddToEnd(list2,"a");
+			list2.AddToEnd("a");
+			list2.AddToEnd("b");
+			list2.AddToEnd("a");
 
 			//Assert
 
@@ -85,13 +85,13 @@ namespace ListImplementations.UnitTest
 			var list2 = new DoublyLinkedList();
 
 			//Act 
-			list.AddToEnd(list,"a");
-			list.AddToEnd(list,"b");
-			list.AddToEnd(list,"c");
+			list.AddToEnd("a");
+			list.AddToEnd("b");
+			list.AddToEnd("c");
 
-			list2.AddToEnd(list2,"a");
-			list2.AddToEnd(list2,"b");
-			list2.AddToEnd(list2,"c");
+			list2.AddToEnd("a");
+			list2.AddToEnd("b");
+			list2.AddToEnd("c");
 
 			//Assert
 
@@ -108,7 +108,7 @@ namespace ListImplementations.UnitTest
 			list.AddToBeginning("beastmodeBarry");
 			list.AddToBeginning("BarryModeBeast");
 			list.AddToBeginning("jesus");
-			list.DeleteNode(list, "jesus");
+			list.DeleteNode("jesus");
 
 			list2.AddToBeginning("beastmodeBarry");
 			list2.AddToBeginning("BarryModeBeast");

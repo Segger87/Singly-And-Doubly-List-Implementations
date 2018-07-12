@@ -107,7 +107,7 @@ namespace ListImplementations.UnitTest
 			list.AddToEnd("a");
 			list.AddToEnd("b");
 			list.AddToEnd("c");
-			list.DeleteNode(list, "b");
+			list.DeleteNode("b");
 
 			list2.AddToEnd("a");
 			list2.AddToEnd("c");

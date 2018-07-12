@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ListImplementations.Lists
 {
@@ -47,21 +42,20 @@ namespace ListImplementations.Lists
 			}
 			return temp;
 		}
-		public void AddToEnd(DoublyLinkedList doubly, string data)
+		public void AddToEnd(string data)
 		{
 			var newNode = new DoubleNode(data);
 
 			if (headNode == null)
 			{
-				newNode.previous = null;
 				headNode = newNode;
 				return;
 			}
-			var lastNode = GetLastNode(doubly.headNode);
+			var lastNode = GetLastNode(this.headNode);
 			lastNode.next = newNode;
 			newNode.previous = lastNode;
 		}
-		public int length()
+		public int Length()
 		{
 			var length = 0;
 			var node = this.headNode;
@@ -74,7 +68,7 @@ namespace ListImplementations.Lists
 		}
 
 		// warning negative index will return head
-		public DoubleNode nodeAt(int index)
+		public DoubleNode NodeAt(int index)
 		{
 			var node = this.headNode;
 			while (index > 0)
@@ -85,31 +79,32 @@ namespace ListImplementations.Lists
 			return node;
 		}
 
-		public void FindNode(DoublyLinkedList doubly, string search)
+		public void FindNode(string search)
 		{
-			for (int i = 0; i < doubly.length(); i++)
+			for (int i = 0; i < this.Length(); i++)
 			{
-				if (doubly.nodeAt(i).data == search)
+				if (this.NodeAt(i).data == search)
 				{
 					Console.WriteLine($"There is a node that matches your search criteria of {search}");
 				}
 				else
 				{
 					Console.WriteLine("Sorry there is no match");
+					return;
 				}
 			}
 		}
 
 		public bool Equals(DoublyLinkedList other)
 		{
-			if (this.length() != other.length())
+			if (this.Length() != other.Length())
 			{
 				return false;
 			}
 
-			for (var i = 0; i < this.length(); i++)
+			for (var i = 0; i < this.Length(); i++)
 			{
-				if (this.nodeAt(i).data != other.nodeAt(i).data)
+				if (this.NodeAt(i).data != other.NodeAt(i).data)
 				{
 					return false;
 				}
@@ -127,13 +122,13 @@ namespace ListImplementations.Lists
 			return hash;
 		}
 
-		public void DeleteNode(DoublyLinkedList doubly, string key)
+		public void DeleteNode(string key)
 		{
-			DoubleNode temp = doubly.headNode;
+			DoubleNode temp = this.headNode;
 			if (temp != null && temp.data == key)
 			{
-				doubly.headNode = temp.next;
-				doubly.headNode.previous = null;
+				this.headNode = temp.next;
+				this.headNode.previous = null;
 				return;
 			}
 			while (temp != null && temp.data != key)

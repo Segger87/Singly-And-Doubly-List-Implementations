@@ -17,7 +17,7 @@ namespace ListImplementations
 			list.AddToBeginning("e");
 			list.AddToBeginning("d");
 
-			list.FindNode(list, "e");
+			list.FindNode("e");
 
 			list.PrintList();
 			SinglyLinkedList list2 = new SinglyLinkedList();
@@ -32,17 +32,17 @@ namespace ListImplementations
 			list2.PrintList();
 
 			var doubly = new DoublyLinkedList();
-			doubly.AddToEnd(doubly,"bob");
-			doubly.AddToEnd(doubly, "peter");
-			doubly.AddToEnd(doubly, "gary");
-			doubly.FindNode(doubly, "peter");
+			doubly.AddToEnd("bob");
+			doubly.AddToEnd("peter");
+			doubly.AddToEnd("gary");
+			doubly.FindNode("peter");
 
 			var doubly2 = new DoublyLinkedList();
-			doubly2.AddToEnd(doubly2,"bob");
-			doubly2.AddToEnd(doubly2,"peter");
-			doubly2.AddToEnd(doubly2,"gary");
+			doubly2.AddToEnd("bob");
+			doubly2.AddToEnd("peter");
+			doubly2.AddToEnd("gary");
 
-			doubly2.DeleteNode(doubly2, "peter");
+			doubly2.DeleteNode("peter");
 			doubly2.PrintList();
 
 			Console.WriteLine(list.Equals(list2));
